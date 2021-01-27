@@ -568,6 +568,10 @@
                         "name": {
                             "description": "The name of the ServiceAccount to use. If not set and create is true, a name is generated using the release name.",
                             "type": "string"
+                        },
+                        "annotations": {
+                          "description": "Annotations to add to the worker kubernetes service account.",
+                          "type": "object"
                         }
                     }
                 },
@@ -647,10 +651,6 @@
                     "description": "This setting tells Kubernetes that it's ok to evict when it wants to scale a node down.",
                     "type": "boolean"
                 },
-                "serviceAccountAnnotations": {
-                  "description": "Annotations to add to the worker kubernetes service account.",
-                  "type": "object"
-                },
                 "extraVolumes": {
                     "description": "Mount additional volumes into workers.",
                     "type": "array"
@@ -696,6 +696,10 @@
                         "name": {
                             "description": "The name of the ServiceAccount to use. If not set and create is true, a name is generated using the release name.",
                             "type": "string"
+                        },
+                        "annotations": {
+                          "description": "Annotations to add to the scheduler kubernetes service account.",
+                          "type": "object"
                         }
                     }
                 },
@@ -734,10 +738,6 @@
                 "safeToEvict": {
                     "description": "This setting tells Kubernetes that its ok to evict when it wants to scale a node down.",
                     "type": "boolean"
-                },
-                "serviceAccountAnnotations": {
-                  "description": "Annotations to add to the scheduler kubernetes service account.",
-                  "type": "object"
                 },
                 "extraVolumes": {
                     "description": "Mount additional volumes into scheduler.",
@@ -834,6 +834,10 @@
                         "name": {
                             "description": "The name of the ServiceAccount to use. If not set and create is true, a name is generated using the release name.",
                             "type": "string"
+                        },
+                        "annotations": {
+                          "description": "Annotations to add to the webserver kubernetes service account.",
+                          "type": "object"
                         }
                     }
                 },
@@ -908,10 +912,6 @@
                             "type": "object"
                         }
                     }
-                },
-                "serviceAccountAnnotations": {
-                  "description": "Annotations to add to the webserver kubernetes service account.",
-                  "type": "object"
                 },
                 "nodeSelector": {
                     "description": "Select certain nodes for airflow pods.",
@@ -1511,5 +1511,5 @@
                 }
             }
         }
-    }
+     }
 }
