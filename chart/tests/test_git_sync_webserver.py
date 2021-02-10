@@ -58,4 +58,6 @@ class GitSyncWebserverTest(unittest.TestCase):
             show_only=["templates/webserver/webserver-deployment.yaml"],
         )
 
-        assert "RELEASE-NAME-airflow-webserver" == jmespath.search("spec.template.spec.serviceAccountName", docs[0])
+        assert "RELEASE-NAME-airflow-webserver" == jmespath.search(
+            "spec.template.spec.serviceAccountName", docs[0]
+        )
