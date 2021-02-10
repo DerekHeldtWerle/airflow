@@ -333,7 +333,6 @@ helm upgrade airflow . \
 | `dags.gitSync.*`                                      | Git sync configuration                                                                             | Please refer to `values.yaml`                 |
 | `multiNamespaceMode`                                  | Whether the KubernetesExecutor can launch pods in multiple namespaces                              | `False`                                       |
 
-
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```bash
