@@ -22,7 +22,7 @@ import jmespath
 
 from tests.helm_template_generator import render_chart
 
-OBJECT_COUNT_IN_BASIC_DEPLOYMENT = 22
+OBJECT_COUNT_IN_BASIC_DEPLOYMENT = 24
 
 
 class TestBaseChartTest(unittest.TestCase):
@@ -34,13 +34,16 @@ class TestBaseChartTest(unittest.TestCase):
                     'metadata': 'AA',
                 },
                 'labels': {"TEST-LABEL": "TEST-VALUE"},
+                "fullnameOverride": "TEST-BASIC",
             },
         )
         list_of_kind_names_tuples = [
             (k8s_object['kind'], k8s_object['metadata']['name']) for k8s_object in k8s_objects
         ]
         assert list_of_kind_names_tuples == [
+            ('ServiceAccount', 'TEST-BASIC-jobs'),
             ('ServiceAccount', 'TEST-BASIC-scheduler'),
+            ('ServiceAccount', 'TEST-BASIC-statsd'),
             ('ServiceAccount', 'TEST-BASIC-webserver'),
             ('ServiceAccount', 'TEST-BASIC-worker'),
             ('Secret', 'TEST-BASIC-postgresql'),

@@ -77,7 +77,7 @@ spec:
 {{ toYaml $tolerations | indent 8 }}
       terminationGracePeriodSeconds: {{ .Values.workers.terminationGracePeriodSeconds }}
       restartPolicy: Always
-      serviceAccountName: {{ default (printf "%s-worker" .Release.Name) .Values.workers.serviceAccount.name }}
+      serviceAccountName: {{ include "worker.serviceAccountName" . }}
       securityContext:
         runAsUser: {{ .Values.uid }}
         fsGroup: {{ .Values.gid }}
