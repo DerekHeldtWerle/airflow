@@ -22,7 +22,7 @@ import jmespath
 
 from tests.helm_template_generator import render_chart
 
-OBJECT_COUNT_IN_BASIC_DEPLOYMENT = 24
+OBJECT_COUNT_IN_BASIC_DEPLOYMENT = 23
 
 
 class TestBaseChartTest(unittest.TestCase):
@@ -45,7 +45,6 @@ class TestBaseChartTest(unittest.TestCase):
             ('ServiceAccount', 'TEST-BASIC-scheduler'),
             ('ServiceAccount', 'TEST-BASIC-statsd'),
             ('ServiceAccount', 'TEST-BASIC-webserver'),
-            ('ServiceAccount', 'TEST-BASIC-worker'),
             ('Secret', 'TEST-BASIC-postgresql'),
             ('Secret', 'TEST-BASIC-airflow-metadata'),
             ('Secret', 'TEST-BASIC-airflow-result-backend'),
